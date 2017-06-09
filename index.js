@@ -4,11 +4,15 @@
 
 'use strict';
 
+const requiredArgs = [
+    'broker',
+    'store',
+    'projection'
+];
 const argv = require('minimist')(process.argv.slice(), {
-    string: ['store'],
-    alias: {
-        'store': 's'
-    }
+    string: requiredArgs,
+    alias: requiredArgs
+        .reduce((aggr, key) => Object.assign(aggr, { [key]: key[0] }), {})
 });
 const log = require('bunyan').createLogger({
     name: 'shades-worker',
@@ -26,6 +30,9 @@ const start = () => {
     log.info('Starting with options', options);
 
     const worker = createWorker({
+        broker: importModule(
+            options.brokerModuleName,
+            options.moduleOptions[options.brokerModuleName]),
         store: importModule(
             options.storeModuleName,
             options.moduleOptions[options.storeModuleName]),
@@ -53,6 +60,7 @@ const parseArgs = () => {
         }, {});
 
     return {
+        brokerModuleName: `shades-broker-${argv.broker}`,
         storeModuleName: `shades-store-${argv.store}`,
         projectionModuleNames,
         moduleOptions
@@ -60,8 +68,7 @@ const parseArgs = () => {
 };
 
 const validateArgs = () => {
-    const requiredKeys = ['store', 'projection'];
-    requiredKeys.forEach(key => {
+    requiredArgs.forEach(key => {
         if (argv[key] === undefined) {
             throw new Error(`Argument "${key}" is required.`);
         }
