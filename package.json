@@ -18,6 +18,7 @@
   "homepage": "https://github.com/shades-io/shades-worker#readme",
   "dependencies": {
     "bunyan": "^1.8.10",
-    "minimist": "^1.2.0"
+    "shades-module-loader": "git+https://github.com/shades-io/shades-module-loader.git",
+    "shades-store-redis": "git+https://github.com/shades-io/shades-store-redis.git"
   }
 }
