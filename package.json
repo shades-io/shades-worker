@@ -1,0 +1,19 @@
+{
+  "name": "shades-worker",
+  "version": "0.1.0",
+  "description": "Shades worker module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shades-io/shades-worker.git"
+  },
+  "author": "shades@netflix.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shades-io/shades-worker/issues"
+  },
+  "homepage": "https://github.com/shades-io/shades-worker#readme"
+}
