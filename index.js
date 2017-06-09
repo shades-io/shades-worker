@@ -29,7 +29,12 @@ const start = () => {
     const options = parseArgs();
     log.info('Starting with options', options);
 
+    /* TODO get from worker config */
+    const namespaces = ['npp'];
+
     const worker = createWorker({
+        log,
+        namespaces,
         broker: importModule(
             options.brokerModuleName,
             options.moduleOptions[options.brokerModuleName]),
