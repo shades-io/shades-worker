@@ -18,7 +18,9 @@
   "homepage": "https://github.com/shades-io/shades-worker#readme",
   "dependencies": {
     "bunyan": "^1.8.10",
+    "shades-broker-mock": "git+https://github.com/shades-io/shades-broker-mock.git",
     "shades-module-loader": "git+https://github.com/shades-io/shades-module-loader.git",
+    "shades-projection-mock": "git+https://github.com/shades-io/shades-projection-mock.git",
     "shades-store-redis": "git+https://github.com/shades-io/shades-store-redis.git"
   }
 }
