@@ -18,10 +18,10 @@
   "homepage": "https://github.com/shades-io/shades-worker#readme",
   "dependencies": {
     "bunyan": "^1.8.10",
-    "shades-broker-mock": "git+https://github.com/shades-io/shades-broker-mock.git",
+    "shades-broker-mock": "file:../shades-broker-mock",
     "shades-module-loader": "git+https://github.com/shades-io/shades-module-loader.git",
-    "shades-projection-mock": "git+https://github.com/shades-io/shades-projection-mock.git",
-    "shades-store-mock": "git+https://github.com/shades-io/shades-store-mock.git",
+    "shades-projection-mock": "file:../shades-projection-mock",
+    "shades-store-mock": "file:../shades-store-mock",
     "shades-store-redis": "git+https://github.com/shades-io/shades-store-redis.git"
   }
 }

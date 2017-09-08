@@ -17,6 +17,7 @@ const start = () => {
     /* TODO get from worker config */
     const namespaces = ['npp'];
 
+    log.debug('Creating worker');
     const worker = createWorker({
         log,
         namespaces,
@@ -24,6 +25,9 @@ const start = () => {
         store,
         projections
     });
+
+    log.debug('Starting worker');
+    worker.start();
 };
 
 start();

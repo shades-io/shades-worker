@@ -19,5 +19,5 @@ Worker for Shades
 #### TODO Example for starting the worker
 
 ```
-node index.js --store redis --projection graphlib --projection bar --shades-store-redis:host='10.127.0.1'
+node index.js --broker mock --store mock --projection mock -c ./config.json
 ```
